@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.little_c.myfirstjob" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".InformationActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegActivity"
+            android:label="@string/title_activity_reg" >
+        </activity>
+        <activity
+            android:name=".ExperienceActivity"
+            android:label="@string/title_activity_experience" >
+        </activity>
+        <activity
+            android:name=".ExperienceItemActivity"
+            android:label="@string/title_activity_experience_item" >
+        </activity>
+        <activity
+            android:name=".FrameActivity"
+            android:label="@string/title_activity_frame" >
+        </activity>
+        <activity
+            android:name=".IndividualActivity"
+            android:label="@string/title_activity_individual" >
+        </activity>
+
+        <activity
+            android:name=".InformationDetailActivity"
+            android:label="@string/title_activity_information_detail" >
+        </activity>
+        <activity
+            android:name=".QuestionActivity"
+            android:label="@string/title_activity_question" >
+        </activity>
+        <activity
+            android:name=".IndividualInfActivity"
+            android:label="@string/title_activity_individual_inf" >
+        </activity>
+        <activity
+            android:name=".QuestionDetailActivity"
+            android:label="@string/title_activity_question_detail" >
+        </activity>
+        <activity
+            android:name=".QuestionAskActivity"
+            android:label="@string/title_activity_question_ask" >
+        </activity>
+        <activity
+            android:name=".IndividualFeedbackActivity"
+            android:label="@string/title_activity_individual_feedback" >
+        </activity>
+        <activity
+            android:name=".InformationJobActivity"
+            android:label="@string/title_activity_information_job" >
+        </activity>
+        <activity
+            android:name=".IndividualAboutActivity"
+            android:label="@string/title_activity_individual_about" >
+        </activity>
+        <activity
+            android:name=".ExperienceDetailActivity"
+            android:label="@string/title_activity_experience_detail" >
+        </activity>
+    </application>
+
+</manifest>

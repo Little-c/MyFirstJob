@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    <LinearLayout
+        android:id="@+id/TitleLinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#56abe4"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/informationTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="招聘信息"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/middlelinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TitleLinearLayout"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="0.5dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0.5dp"
+            android:paddingTop="0dp"
+            >
+
+            <Spinner
+                android:id="@+id/spinner_province"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="0.5dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0.5dp"
+            android:paddingTop="0dp"
+            >
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="0.5dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0.5dp"
+            android:paddingTop="0dp" >
+
+            <Spinner
+                android:id="@+id/spinner_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="0.5dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0.5dp"
+            android:paddingTop="0dp" >
+
+            <Spinner
+                android:id="@+id/spinner_profession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/informationListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/middlelinearlayout" />
+
+
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateQuestion" >
+    <LinearLayout
+        android:id="@+id/infDetailTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#56abe4"
+        android:orientation="horizontal"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+
+            >
+            <ImageView
+                android:id="@+id/backToMain"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/back1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/informationTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提问"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            >
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/infDetailTitle"
+        android:layout_marginTop="10dp"
+        >
+        <EditText
+            android:id="@+id/questionEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_edittext_normal"
+            android:gravity="top"
+            android:padding="3dp"
+            />
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            >
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#56abe4"
+                android:text="发表问题"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
