@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Collection" >
+	<LinearLayout
+        android:id="@+id/infDetailTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#56abe4"
+       	android:orientation="horizontal"
+       	
+         >
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="left"
+            
+             >
+            <ImageView 
+              android:id="@+id/backToMain"
+              android:layout_width="35dp"
+              android:layout_height="match_parent"
+              android:background="@drawable/back1"
+              /> 
+         </LinearLayout>
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="center"
+             >
+             <TextView
+            android:id="@+id/informationTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APP"
+            android:textColor="#fff"
+            android:textSize="20sp" /> 
+         </LinearLayout> 
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="right"
+             >
+         </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_below="@id/infDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="无" 
+        />
+
+</RelativeLayout>
+
