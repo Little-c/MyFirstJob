@@ -6,6 +6,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="Indi">Individual</string>
     <string name="test">Test</string>
+    <string name="exper">Experience</string>
+    <string name="experdetail">ExperDetail</string>
+    <string name="infor">Information</string>
+    <string name="about">AboutUs</string>
      <color name="search_bottem_textcolor">#000</color>
 
 </resources>

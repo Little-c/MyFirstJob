@@ -175,7 +175,7 @@ public class FrameActivity extends ActivityGroup {
 		view.setTag(0);
 		list.add(view);
 		view1 = FrameActivity.this.getLocalActivityManager()
-					 .startActivity("experience", new Intent(FrameActivity.this, TestActivity.class))
+					 .startActivity("experience", new Intent(FrameActivity.this, ExperActivity.class))
 					 .getDecorView();
 		view1.setTag(1);
 		list.add(view1);

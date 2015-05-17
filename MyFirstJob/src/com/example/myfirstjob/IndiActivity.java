@@ -2,15 +2,16 @@ package com.example.myfirstjob;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class IndiActivity extends Activity implements OnItemClickListener {
 	GridView gridView;
@@ -23,7 +24,7 @@ public class IndiActivity extends Activity implements OnItemClickListener {
 		
 		int image[] = { R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5,
 				R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9,};
-		String title[] ={"个人信息", "我的收藏", "关注问题", "招聘提醒", "用户反馈", "推荐软件", "软件设置", "软件更新", "关于我们" };
+		String title[] ={"个人信息", "我的收藏", "关注问题", "招聘提醒", "用户反馈", "推荐软件", "软件设置", "软件更新", "关于软件" };
 		
 		for (int i = 0 ; i < 9 ; i++) {
 			HashMap<String, Object> map = new HashMap<String, Object>();
@@ -63,10 +64,11 @@ public class IndiActivity extends Activity implements OnItemClickListener {
 					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if (arg2 == 7) {
-					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
-					startActivity(intent);
+					Toast toast = Toast.makeText(IndiActivity.this, "已经是最新版本", Toast.LENGTH_LONG);
+					toast.setGravity(Gravity.CENTER, 0, 0);
+					toast.show();
 				} else {
-					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
+					Intent intent = new Intent(IndiActivity.this, AboutUS.class);
 					startActivity(intent);
 				}
 			}

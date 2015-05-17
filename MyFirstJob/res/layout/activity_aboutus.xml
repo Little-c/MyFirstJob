@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed"
+    tools:context=".AboutUs" >
+	<LinearLayout
+        android:id="@+id/infDetailTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#56abe4"
+       	android:orientation="horizontal"
+       	
+         >
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="left"
+            
+             >
+            <ImageView 
+              android:id="@+id/backToMain"
+              android:layout_width="35dp"
+              android:layout_height="match_parent"
+              android:background="@drawable/back1"
+              /> 
+         </LinearLayout>
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="center"
+             >
+             <TextView
+            android:id="@+id/informationTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关于软件"
+            android:textColor="#fff"
+            android:textSize="20sp" /> 
+         </LinearLayout> 
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="right"
+             >
+         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infDetailTitle"
+        android:orientation="vertical"
+        >
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+             <TextView 
+       	 		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_marginTop="10dp"
+        		android:background="#fff"
+        		android:padding="5dp"
+        		android:textSize="18sp"
+        		android:text="应用简介：
+        	\n        这是针对大学生求职应聘的一个安卓APP，聚合了招聘实习信息、笔试面试经验、同时也可以提问回答相关问题。
+        	\n        这也是自己动手写的第一个安卓应用，还有很多做的不好的地方，请多多包含"
+       		 />
+			<TextView 
+       	 		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_marginTop="5dp"
+        		android:background="#fff"
+        		android:padding="5dp"
+        		android:textSize="18sp"
+        		android:text="开发者：    Little-C
+        	\n       计算机专业，代码小渣渣，正走在测试这一条艰难的不归路上，找寻着属于自己的那个位置。。。 "
+       		 />
+			
+        </LinearLayout>
+        
+    </LinearLayout>
+
+</RelativeLayout>
+
