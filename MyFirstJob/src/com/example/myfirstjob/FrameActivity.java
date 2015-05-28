@@ -180,7 +180,7 @@ public class FrameActivity extends ActivityGroup {
 		view1.setTag(1);
 		list.add(view1);
 		view2 = FrameActivity.this.getLocalActivityManager()
-						  .startActivity("requestion", new Intent(FrameActivity.this, TestActivity.class))
+						  .startActivity("requestion", new Intent(FrameActivity.this, QuestActivity.class))
 						  .getDecorView();
 		view2.setTag(2);
 		list.add(view2);

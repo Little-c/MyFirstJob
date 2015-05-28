@@ -34,6 +34,9 @@
         <activity android:name=".ExperDetail" android:label="@string/experdetail"/>
         <activity android:name=".InforActivity" android:label="@string/infor"/>
         <activity android:name=".AboutUS" android:label="@string/about"/>
+        <activity android:name=".CreatQuest" android:label="@string/creatquest"/>
+        <activity android:name=".QuestActivity" android:label="@string/quest"/>
+        <activity android:name=".QuestDetail" android:label="@string/questdetail"/>
     </application>
 
 </manifest>

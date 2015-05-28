@@ -10,6 +10,9 @@
     <string name="experdetail">ExperDetail</string>
     <string name="infor">Information</string>
     <string name="about">AboutUs</string>
+    <string name="creatquest">CreatQuest</string>
+    <string name="quest">QuestActivity</string>
+     <string name="questdetail">QuestDetail</string>
      <color name="search_bottem_textcolor">#000</color>
 
 </resources>

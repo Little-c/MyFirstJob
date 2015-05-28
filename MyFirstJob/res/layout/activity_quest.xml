@@ -104,21 +104,7 @@
 					android:textSize="12sp"
 					android:textColor="#cdcdcd"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-					android:text="推荐"
-					android:textSize="12sp"
-					android:textColor="#cdcdcd"
-                    />
-              	<ImageView 
-              	    android:layout_width="13dp"
-              	    android:layout_height="13dp"
-              	    android:layout_marginLeft="10dp"
-              	    android:layout_marginTop="2dp"
-              	   
-              	    />
+                
             </LinearLayout>
         </LinearLayout>
 		
@@ -165,21 +151,7 @@
 					android:textSize="12sp"
 					android:textColor="#cdcdcd"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-					android:text="推荐"
-					android:textSize="12sp"
-					android:textColor="#cdcdcd"
-                    />
-              	<ImageView 
-              	    android:layout_width="13dp"
-              	    android:layout_height="13dp"
-              	    android:layout_marginLeft="10dp"
-              	    android:layout_marginTop="2dp"
-              	    
-              	    />
+               
             </LinearLayout>
         </LinearLayout>
         
@@ -201,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="我现在大一，是学软件工程专业的，要经过什么样的的历练才能有机会去参加 DEFCON-CTF 大赛？"
+                    android:text="本人大二，刚接触安卓，求推荐学安卓比较好的学习书籍、网站"
                     android:textSize="15sp"
                     />
             </LinearLayout>
@@ -226,21 +198,7 @@
 					android:textSize="12sp"
 					android:textColor="#cdcdcd"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-					android:text="推荐"
-					android:textSize="12sp"
-					android:textColor="#cdcdcd"
-                    />
-              	<ImageView 
-              	    android:layout_width="13dp"
-              	    android:layout_height="13dp"
-              	    android:layout_marginLeft="10dp"
-              	    android:layout_marginTop="2dp"
-              	   
-              	    />
+               
             </LinearLayout>
         </LinearLayout>
         
@@ -262,7 +220,7 @@
                 <TextView 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="机械电子的大一新生怎么学好专业呢?"
+                    android:text="通信工程的大一新生怎么学好专业呢?"
                     android:textSize="15sp"
                     />
             </LinearLayout>
@@ -287,21 +245,7 @@
 					android:textSize="12sp"
 					android:textColor="#cdcdcd"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-					android:text="推荐"
-					android:textSize="12sp"
-					android:textColor="#cdcdcd"
-                    />
-              	<ImageView 
-              	    android:layout_width="13dp"
-              	    android:layout_height="13dp"
-              	    android:layout_marginTop="2dp"
-              	    android:layout_marginLeft="10dp"
-              	   
-              	    />
+               
             </LinearLayout>
         </LinearLayout>
         
@@ -348,21 +292,7 @@
 					android:textSize="12sp"
 					android:textColor="#cdcdcd"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-					android:text="推荐"
-					android:textSize="12sp"
-					android:textColor="#cdcdcd"
-                    />
-              	<ImageView 
-              	    android:layout_width="13dp"
-              	    android:layout_height="13dp"
-              	    android:layout_marginLeft="10dp"
-              	    android:layout_marginTop="2dp"
-              	    
-              	    />
+               
             </LinearLayout>
         </LinearLayout>
         
@@ -408,21 +338,7 @@
 					android:textSize="12sp"
 					android:textColor="#cdcdcd"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-					android:text="推荐"
-					android:textSize="12sp"
-					android:textColor="#cdcdcd"
-                    />
-              	<ImageView 
-              	    android:layout_width="13dp"
-              	    android:layout_height="13dp"
-              	    android:layout_marginTop="2dp"
-              	    android:layout_marginLeft="10dp"
-              	    
-              	    />
+               
             </LinearLayout>
         </LinearLayout>
         

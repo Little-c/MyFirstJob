@@ -25,37 +25,40 @@ public final class R {
     }
     public static final class drawable {
         public static final int back1=0x7f020000;
-        public static final int bottom_bar=0x7f020001;
-        public static final int e0=0x7f020002;
-        public static final int e1=0x7f020003;
-        public static final int e2=0x7f020004;
-        public static final int e3=0x7f020005;
-        public static final int e4=0x7f020006;
-        public static final int experience1=0x7f020007;
-        public static final int experience2=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int img1=0x7f02000a;
-        public static final int img2=0x7f02000b;
-        public static final int img3=0x7f02000c;
-        public static final int img4=0x7f02000d;
-        public static final int img5=0x7f02000e;
-        public static final int img6=0x7f02000f;
-        public static final int img7=0x7f020010;
-        public static final int img8=0x7f020011;
-        public static final int img9=0x7f020012;
-        public static final int individual1=0x7f020013;
-        public static final int individual2=0x7f020014;
-        public static final int information1=0x7f020015;
-        public static final int information2=0x7f020016;
-        public static final int question1=0x7f020017;
-        public static final int question2=0x7f020018;
-        public static final int userphoto=0x7f020019;
+        public static final int bg_edittext_normal=0x7f020001;
+        public static final int bottom_bar=0x7f020002;
+        public static final int e0=0x7f020003;
+        public static final int e1=0x7f020004;
+        public static final int e2=0x7f020005;
+        public static final int e3=0x7f020006;
+        public static final int e4=0x7f020007;
+        public static final int experience1=0x7f020008;
+        public static final int experience2=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int img1=0x7f02000b;
+        public static final int img2=0x7f02000c;
+        public static final int img3=0x7f02000d;
+        public static final int img4=0x7f02000e;
+        public static final int img5=0x7f02000f;
+        public static final int img6=0x7f020010;
+        public static final int img7=0x7f020011;
+        public static final int img8=0x7f020012;
+        public static final int img9=0x7f020013;
+        public static final int individual1=0x7f020014;
+        public static final int individual2=0x7f020015;
+        public static final int information1=0x7f020016;
+        public static final int information2=0x7f020017;
+        public static final int question1=0x7f020018;
+        public static final int question2=0x7f020019;
+        public static final int us=0x7f02001a;
+        public static final int userphoto=0x7f02001b;
     }
     public static final class id {
         public static final int FramePager=0x7f090016;
         public static final int Frame_BottemView=0x7f090009;
         public static final int TitleLinearLayout=0x7f09001f;
-        public static final int action_settings=0x7f090031;
+        public static final int action_settings=0x7f090036;
+        public static final int answerQuestion=0x7f090035;
         public static final int backToMain=0x7f090001;
         public static final int collection=0x7f090025;
         public static final int createBtn=0x7f090029;
@@ -83,6 +86,7 @@ public final class R {
         public static final int inforTxt=0x7f09000c;
         public static final int informationListView=0x7f090024;
         public static final int informationTitleText=0x7f090002;
+        public static final int interestQuestion=0x7f090034;
         public static final int listItem=0x7f09002b;
         public static final int listItem1=0x7f09002c;
         public static final int listItem2=0x7f09002d;
@@ -93,12 +97,15 @@ public final class R {
         public static final int questBtn=0x7f090010;
         public static final int questImg=0x7f090011;
         public static final int questTxt=0x7f090012;
+        public static final int questionEditText=0x7f090031;
+        public static final int questionTextView=0x7f090033;
         public static final int requestionContent=0x7f09002a;
         public static final int requestionTitleLayout=0x7f090027;
         public static final int requestionTitleText=0x7f090028;
         public static final int spinner_place=0x7f090021;
         public static final int spinner_profession=0x7f090023;
         public static final int spinner_school=0x7f090022;
+        public static final int submitBtn=0x7f090032;
         public static final int userHead=0x7f09001a;
         public static final int userHeadLayout=0x7f090019;
         public static final int userName=0x7f09001b;
@@ -113,22 +120,29 @@ public final class R {
         public static final int activity_infor=0x7f030006;
         public static final int activity_infordetail=0x7f030007;
         public static final int activity_quest=0x7f030008;
-        public static final int activity_test=0x7f030009;
+        public static final int activity_questcreat=0x7f030009;
+        public static final int activity_questitem=0x7f03000a;
+        public static final int activity_test=0x7f03000b;
     }
     public static final class menu {
         public static final int aboutus=0x7f080000;
-        public static final int main=0x7f080001;
-        public static final int test=0x7f080002;
+        public static final int creatquest=0x7f080001;
+        public static final int main=0x7f080002;
+        public static final int questitem=0x7f080003;
+        public static final int test=0x7f080004;
     }
     public static final class string {
         public static final int Indi=0x7f050003;
         public static final int about=0x7f050008;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int creatquest=0x7f050009;
         public static final int exper=0x7f050005;
         public static final int experdetail=0x7f050006;
         public static final int hello_world=0x7f050002;
         public static final int infor=0x7f050007;
+        public static final int quest=0x7f05000a;
+        public static final int questdetail=0x7f05000b;
         public static final int test=0x7f050004;
     }
     public static final class style {
