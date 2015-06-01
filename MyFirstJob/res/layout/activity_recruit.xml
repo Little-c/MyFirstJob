@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Collection" >
+	<LinearLayout
+        android:id="@+id/infDetailTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#56abe4"
+       	android:orientation="horizontal"
+       	android:gravity="center"
+         >
+         <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="招聘信息"
+             android:textColor="@color/button_text_color"
+             android:textSize="20sp"
+             />
+
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_below="@+id/infDetailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+        <LinearLayout
+            android:id="@+id/sheng_lay"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_drop_down_menu"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp" >
+
+                        <TextView
+                            android:id="@+id/sheng_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="浙江省"
+                            android:textColor="#828282"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/xiala" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/shi_lay"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_drop_down_menu"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp" >
+
+                        <TextView
+                            android:id="@+id/shi_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="杭州市"
+                            android:textColor="#828282"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/xiala" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/xiao_lay"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_drop_down_menu"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                         android:paddingLeft="5dp"
+                        android:paddingRight="5dp" >
+
+                        <TextView
+                            android:id="@+id/xiao_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:text="浙江大学"
+                            android:textColor="#828282"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/xiala" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

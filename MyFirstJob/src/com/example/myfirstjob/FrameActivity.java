@@ -170,7 +170,7 @@ public class FrameActivity extends ActivityGroup {
 	private void createView() {
 		// TODO Auto-generated method stub
 		view = this.getLocalActivityManager()
-					.startActivity("information", new Intent(FrameActivity.this, TestActivity.class))
+					.startActivity("information", new Intent(FrameActivity.this, Recruit.class))
 					.getDecorView();
 		view.setTag(0);
 		list.add(view);
