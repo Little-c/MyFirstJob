@@ -20,16 +20,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.myfirstjob.FrameActivity"
-            android:label="@string/app_name" >
+            android:name="com.example.myfirstjob.Login"
+            android:label="登陆界面" 
+            android:theme="@android:style/Theme.NoTitleBar" 
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.myfirstjob.Register" android:label="注册" android:theme="@android:style/Theme.NoTitleBar"></activity>
+        <activity android:name="com.example.myfirstjob.FrameActivity" android:label="主界面"></activity>
         <activity android:name=".IndiActivity" android:label="@string/Indi"/>
-        <activity android:name=".TestActivity" android:label="@string/test"/>
+        <activity android:name=".Recruit" android:theme="@android:style/Theme.NoTitleBar" android:label="招聘"/>
         <activity android:name=".ExperActivity" android:label="@string/exper"/>
         <activity android:name=".ExperDetail" android:label="@string/experdetail"/>
         <activity android:name=".InforActivity" android:label="@string/infor"/>
