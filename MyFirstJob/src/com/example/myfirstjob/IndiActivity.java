@@ -43,25 +43,25 @@ public class IndiActivity extends Activity implements OnItemClickListener {
 					long arg3) {
 				// TODO Auto-generated method stub
 				if(arg2 == 0 ) {
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if (arg2 == 1){
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if (arg2 == 2){
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if (arg2 == 3){
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if( arg2 == 4 ) {
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if ( arg2 == 5) {
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if (arg2 == 6) {
-					Intent intent = new Intent(IndiActivity.this, Recruit.class);
+					Intent intent = new Intent(IndiActivity.this, TestActivity.class);
 					startActivity(intent);
 				} else if (arg2 == 7) {
 					Toast toast = Toast.makeText(IndiActivity.this, "已经是最新版本", Toast.LENGTH_LONG);
