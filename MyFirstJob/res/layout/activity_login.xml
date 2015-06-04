@@ -21,6 +21,7 @@
             android:textColor="#000000"
             />
         <EditText 
+            android:id="@+id/account_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="手机号/邮箱"
@@ -44,6 +45,7 @@
             android:textColor="#000000"
             />
         <EditText 
+            android:id="@+id/pass_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="密码"

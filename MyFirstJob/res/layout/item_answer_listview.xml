@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView 
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张三"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            />
+        <TextView 
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2015-6-2 14:54"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+    <TextView 
+        android:id="@+id/answer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="为了创业而创业和为了就业而就业一样不可取。无论是创业还是就业，进入职场之前，你必须清楚的明白你的能力、优势、短板，并且有针对性的进行选择。"
+        android:padding="10dp"
+        android:textSize="19sp"
+        />
+
+</LinearLayout>

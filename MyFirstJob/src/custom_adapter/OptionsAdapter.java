@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.example.myfirstjob.R;
 
+import android.R.integer;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +23,7 @@ public class OptionsAdapter extends BaseAdapter {
 	private ArrayList<String> list = new ArrayList<String>(); 
     private Activity activity = null; 
 	private Handler handler;
+	private int k;
     
 	/**
 	 * 自定义构造方法
@@ -29,10 +31,11 @@ public class OptionsAdapter extends BaseAdapter {
 	 * @param handler
 	 * @param list
 	 */
-    public OptionsAdapter(Activity activity,Handler handler,ArrayList<String> list){
+    public OptionsAdapter(Activity activity,Handler handler,ArrayList<String> list,int k){
     	this.activity = activity;
     	this.handler = handler;
     	this.list = list;
+    	this.k=k;
     }
 	
 	@Override
@@ -51,7 +54,8 @@ public class OptionsAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) 
+	{
 		ViewHolder holder = null; 
         if (convertView == null) { 
             holder = new ViewHolder(); 
@@ -75,7 +79,7 @@ public class OptionsAdapter extends BaseAdapter {
 				//设置选中索引
 				data.putInt("selIndex", position);
 				msg.setData(data);
-				msg.what = 1;
+				msg.what = k;
 				//发出消息
 				handler.sendMessage(msg);
 			}

@@ -14,6 +14,7 @@
         android:padding="10dp"
         >
         <TextView 
+            
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="账号"
@@ -21,6 +22,7 @@
             android:textColor="#000000"
             />
         <EditText 
+            android:id="@+id/account_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入手机号/邮箱"
@@ -45,6 +47,7 @@
             android:textColor="#000000"
             />
         <EditText 
+            android:id="@+id/name_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入昵称"
@@ -69,6 +72,7 @@
             android:textColor="#000000"
             />
         <EditText 
+            android:id="@+id/pass_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入密码"
@@ -93,6 +97,7 @@
             android:textColor="#000000"
             />
         <EditText 
+            android:id="@+id/confirm_edt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请确认密码"
@@ -103,6 +108,7 @@
     </LinearLayout>
     
     <Button 
+        android:id="@+id/register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="注册"

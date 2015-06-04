@@ -2,21 +2,19 @@ package com.example.myfirstjob;
 
 import java.io.File;
 import java.util.ArrayList;
-
-
-
-
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import custom_adapter.OptionsAdapter;
+import custom_adapter.RecruitAdapter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
 import android.R.integer;
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.BitmapDrawable;
@@ -25,6 +23,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -77,13 +77,42 @@ public class Recruit extends Activity implements Callback
 		private TextView xiaoTextView;
 		
 		private SQLiteDatabase db;
+		
+		private ListView listViewRecruit;
+		private RecruitAdapter recruitAdapter;
+		ArrayList<String> titles=new ArrayList<String>();
+		ArrayList<String> times=new ArrayList<String>();
+		ArrayList<String> places=new ArrayList<String>();
+		ArrayList<String> schools=new ArrayList<String>();
+		ArrayList<String> recruitIDs=new ArrayList<String>();
+		List<Map<String, Object>> listItems;
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_recruit);
+
+		initView();
 		
+	}
+	
+	private void initView() 
+	{
+		listViewRecruit=(ListView)findViewById(R.id.list_recruit);
+		
+		listViewRecruit.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Intent skipIntent=new Intent(Recruit.this,RecruitDetails.class);
+				skipIntent.putExtra("recruitID", recruitIDs.get(arg2));
+				Recruit.this.startActivity(skipIntent);
+				
+			}
+		});
 		
 	}
 	
@@ -151,11 +180,7 @@ public class Recruit extends Activity implements Callback
 		//获取下拉框依附的组件宽度
         int width = shengLay.getWidth();
         shengWidth = width;
-        
-        
-        
-       
-        
+
         //初始化PopupWindow
         initPopuWindow();
         
@@ -167,13 +192,14 @@ public class Recruit extends Activity implements Callback
      */ 
     private void initPopuWindow()
     { 
-    	
+    	sqlite();
+		queryRecruits();
     	initDatas();
     	//PopupWindow浮动下拉框布局
         View shengWindow = (View)this.getLayoutInflater().inflate(R.layout.options, null); 
-        shengListView = (ListView) shengWindow.findViewById(R.id.list);         
+        shengListView = (ListView) shengWindow.findViewById(R.id.list);    
         //设置自定义Adapter
-        shengOptionsAdapter = new OptionsAdapter(this,shengHandler,shengDatas);  
+        shengOptionsAdapter = new OptionsAdapter(this,shengHandler,shengDatas,1);  
         shengListView.setAdapter(shengOptionsAdapter);         
         shengSelectPopupWindow = new PopupWindow(shengWindow, shengWidth,LayoutParams.WRAP_CONTENT, true);         
         shengSelectPopupWindow.setOutsideTouchable(true);         
@@ -183,7 +209,7 @@ public class Recruit extends Activity implements Callback
         View shiWindow = (View)this.getLayoutInflater().inflate(R.layout.options, null); 
         shiListView = (ListView) shiWindow.findViewById(R.id.list);         
         //设置自定义Adapter
-        shiOptionsAdapter = new OptionsAdapter(this,shiHandler,shiDatas);  
+        shiOptionsAdapter = new OptionsAdapter(this,shiHandler,shiDatas,2);  
         shiListView.setAdapter(shiOptionsAdapter);         
         shiSelectPopupWindow = new PopupWindow(shiWindow, shengWidth,LayoutParams.WRAP_CONTENT, true);         
         shiSelectPopupWindow.setOutsideTouchable(true);         
@@ -192,12 +218,12 @@ public class Recruit extends Activity implements Callback
         View xiaoWindow = (View)this.getLayoutInflater().inflate(R.layout.options, null); 
         xiaoListView = (ListView) xiaoWindow.findViewById(R.id.list);         
         //设置自定义Adapter
-        xiaoOptionsAdapter = new OptionsAdapter(this,xiaoHandler,xiaoDatas);  
+        xiaoOptionsAdapter = new OptionsAdapter(this,xiaoHandler,xiaoDatas,3);  
         xiaoListView.setAdapter(xiaoOptionsAdapter);         
         xiaoSelectPopupWindow = new PopupWindow(xiaoWindow, shengWidth,LayoutParams.WRAP_CONTENT, true);         
         xiaoSelectPopupWindow.setOutsideTouchable(true);         
         xiaoSelectPopupWindow.setBackgroundDrawable(new BitmapDrawable());  
-    	
+        
     	
     } 
     
@@ -208,27 +234,9 @@ public class Recruit extends Activity implements Callback
 	{
 		
 	     shengDatas.clear();
-		 querySqlite();
-         
-
-         shiDatas.clear();		 
-         shiDatas.add("北京");
-         shiDatas.add("上海");
-         shiDatas.add("广州");
-         shiDatas.add("深圳");
-         shiDatas.add("重庆");
-         shiDatas.add("青岛");
-         shiDatas.add("石家庄");
-         
-         xiaoDatas.clear();		 
-         xiaoDatas.add("北京");
-         xiaoDatas.add("上海");
-         xiaoDatas.add("广州");
-         xiaoDatas.add("深圳");
-         xiaoDatas.add("重庆");
-         xiaoDatas.add("青岛");
-         xiaoDatas.add("石家庄");
-         
+	     shiDatas.clear();
+	     xiaoDatas.clear();
+		 querySqlite();   
          
 	}
     
@@ -282,44 +290,120 @@ public class Recruit extends Activity implements Callback
 				int selIndex = data.getInt("selIndex");
 				shengTextView.setText(shengDatas.get(selIndex));
 				shengSelectPopupWindow.dismiss();
+				
+				initDatas();
+				shiTextView.setText(shiDatas.get(0));
+				initDatas();
+				xiaoTextView.setText(xiaoDatas.get(0));
+				queryRecruits();
+				
 				break;
+			case 2:
+				//选中下拉项，下拉框消失
+				shiTextView.setText(shiDatas.get(data.getInt("selIndex")));
+				shiSelectPopupWindow.dismiss();				
+				initDatas();
+				xiaoTextView.setText(xiaoDatas.get(0));
+				queryRecruits();
+				break;
+			case 3:
+				//选中下拉项，下拉框消失
+				xiaoTextView.setText(xiaoDatas.get(data.getInt("selIndex")));
+				xiaoSelectPopupWindow.dismiss();
+				queryRecruits();
+				break;
+				
 			
 		}
 		return false;
 	}
 	
-	private void querySqlite()
+	private void sqlite()
 	{
-		 File cacheDir;
+		File cacheDir;
 	     if (android.os.Environment.getExternalStorageState().equals( android.os.Environment.MEDIA_MOUNTED))//判断是否存在sd卡 
-            cacheDir = new File(android.os.Environment.getExternalStorageDirectory(), "MyFirstJob/db");  //在sd卡的根目录上创建文件"LazyList"         
+           cacheDir = new File(android.os.Environment.getExternalStorageDirectory(), "MyFirstJob/db");  //在sd卡的根目录上创建文件"LazyList"         
 	     else  
-            cacheDir = this.getCacheDir();      
+           cacheDir = this.getCacheDir();      
 	     if (cacheDir.exists()) //若目录 存在
 	     {
 	    	 
-	    	 
-	    	 db=SQLiteDatabase.openOrCreateDatabase(cacheDir+"/FirstJob.db", null);
+	    	 if(db==null)
+	    		 db=SQLiteDatabase.openOrCreateDatabase(cacheDir+"/FirstJob.db", null);
+	     }
+	}
+	
+	private void querySqlite()
+	{
+		 
 	    	 Cursor cursor=db.rawQuery("select sheng from Area group by sheng", null);
-	    	 if(cursor.getCount()<1)
+	    	 Cursor shiCursor=db.rawQuery("select shi from Area where sheng='"+shengTextView.getText().toString()+"' group by shi", null);
+	    	 Cursor xiaoCursor=db.rawQuery("select xiao from Area where shi='"+shiTextView.getText().toString()+"' group by xiao", null);
+	    	 if(cursor.getCount()>0)
 	    	 {
-	    	 }
-	    	 else 
-	    	 {
-	    		 
+	    		
 	    		 while(cursor.moveToNext())
 	    		 {
 	    			 shengDatas.add( cursor.getString(0));
 	    		 }
 	    		
 	    	 }
-	    	 
-	     }
-	     else {
-			System.out.println("b");
+	    	 if(shiCursor.getCount()>0)
+	    	 {
+	    		 while(shiCursor.moveToNext())
+	    		 {
+	    			 shiDatas.add(shiCursor.getString(0));
+	    		 }
+	    	 }
+	    	 if(xiaoCursor.getCount()>0)
+	    	 {
+	    		 while(xiaoCursor.moveToNext())
+	    		 {
+	    			 xiaoDatas.add(xiaoCursor.getString(0));
+	    		 }
+	    	 }
+
+	}
+	
+	private void queryRecruits() 
+	{
+		listItems=new ArrayList<Map<String,Object>>();
+		titles.clear();
+		times.clear();
+		places.clear();
+		schools.clear();
+		recruitIDs.clear();
+		Cursor cursor=db.rawQuery("select title,date,sheng,shi,xiao,ID from Recruit where xiao='"+xiaoTextView.getText().toString()+"' order by date desc", null);
+		
+		while(cursor.moveToNext())
+		{
+			titles.add(cursor.getString(0));
+			times.add(cursor.getString(1));
+			places.add(cursor.getString(2)+"-"+cursor.getString(3));
+			schools.add(cursor.getString(4));
+			recruitIDs.add(cursor.getString(5));
+			
+			Map<String, Object> listItem=new HashMap<String, Object>();
+			listItem.put("title", titles.get(cursor.getPosition()));
+			listItem.put("time", times.get(cursor.getPosition()));
+			listItem.put("place", places.get(cursor.getPosition()));
+			listItem.put("school", schools.get(cursor.getPosition()));
+			listItem.put("recruitID", recruitIDs.get(cursor.getPosition()));
+			
+			
+			listItems.add(listItem);
 		}
 
-		 
+		if (recruitAdapter == null) 
+		{
+			recruitAdapter=new RecruitAdapter(Recruit.this, listItems);
+			listViewRecruit.setAdapter(recruitAdapter);
+			
+		}
+		else 
+		{
+			recruitAdapter.updateView(listItems);
+		}
 	}
 
 }

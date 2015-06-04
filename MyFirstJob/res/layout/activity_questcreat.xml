@@ -57,12 +57,36 @@
         android:layout_below="@id/infDetailTitle"
         android:layout_marginTop="10dp"
         >
+         <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="问题题目"
+             android:textSize="18sp"
+             android:layout_marginLeft="10dp"
+             />
+         <EditText 
+             android:id="@+id/title_edt"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@drawable/bg_edittext_normal"
+             android:textSize="17sp"
+             android:layout_margin="10dp"
+             android:padding="3dp"
+             />
+         <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="问题描述"
+             android:textSize="18sp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginTop="10dp"
+             
+             />
         <EditText
        	 	android:id="@+id/questionEditText"
         	android:layout_width="fill_parent"
         	android:layout_height="200dp"
-			android:layout_marginLeft="5dp"
-			android:layout_marginRight="5dp"
+			android:layout_margin="10dp"
         	android:background="@drawable/bg_edittext_normal"
         	android:gravity="top"
         	android:padding="3dp"
