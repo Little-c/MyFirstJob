@@ -2,6 +2,8 @@ package com.example.myfirstjob;
 
 import java.io.File;
 
+import Util.PreferenceUtil;
+import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -27,6 +29,7 @@ public class ExperDetail extends Activity {
 	private int display = 0;
 	private SQLiteDatabase db;
 	private String url;
+	private int isColle;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -41,7 +44,8 @@ public class ExperDetail extends Activity {
 		
 		
 		
-		backToMain.setOnClickListener(new OnClickListener() {
+		backToMain.setOnClickListener(new OnClickListener() 
+		{
 			
 			@Override
 			public void onClick(View v) {
@@ -74,7 +78,15 @@ public class ExperDetail extends Activity {
 				// TODO Auto-generated method stub
 				if(display == 0)
 				{
-					insertCollection();
+					if(isColle>0)
+					{
+					
+						db.execSQL("update Collection set isCollection='true' where experienceID='"+getIntent().getStringExtra("experienceID")+"' and userID='"+PreferenceUtil.getUserID(ExperDetail.this, "UserID")+"'");
+					}
+					else
+					{
+						db.execSQL("insert into Collection(experienceID,userID,isCollection) values('"+getIntent().getStringExtra("experienceID")+"','"+PreferenceUtil.getUserID(ExperDetail.this, "UserID")+"','true')");
+					}
 					Toast toast = Toast.makeText(ExperDetail.this, "收藏成功", Toast.LENGTH_SHORT);
 					toast.setGravity(Gravity.CENTER, 0, 0);
 					toast.show();
@@ -84,7 +96,8 @@ public class ExperDetail extends Activity {
 				} 
 				else
 				{
-					updateCollection();
+					db.execSQL("update Collection set isCollection='false' where experienceID='"+getIntent().getStringExtra("experienceID")+"' and userID='"+PreferenceUtil.getUserID(ExperDetail.this, "UserID")+"'");
+					sendBroadcast(new Intent("collectionUpdate"));
 					Toast toast = Toast.makeText(ExperDetail.this, "取消收藏成功", Toast.LENGTH_SHORT);
 					toast.setGravity(Gravity.CENTER, 0, 0);
 					toast.show();
@@ -114,25 +127,32 @@ public class ExperDetail extends Activity {
 	
 	private void queryCollection()
 	{
-		Cursor cursor=db.rawQuery("select url from Collection where url='"+url+"'", null);
-		if(cursor.getCount()==1)
+		Cursor cursor=db.rawQuery("select isCollection from Collection where experienceID='"+getIntent().getStringExtra("experienceID")+"' and userID='"+PreferenceUtil.getUserID(ExperDetail.this, "UserID")+"' ", null);
+		isColle=cursor.getCount();
+		
+		
+		if(cursor.getCount()==0)
 		{
-			collectBtn.setText("取消收藏");
-			display=1;
-		}
-		else {
 			collectBtn.setText("收藏");
 			display=0;
 		}
+		else 
+			{
+				cursor.moveToFirst();
+				if(cursor.getString(0).equals("true"))
+				{
+					collectBtn.setText("取消收藏");
+					display=1;
+				}
+				else 
+				{
+					collectBtn.setText("收藏");
+					display=0;
+				}
+			}
+			
+		
 	}
 	
-	private void insertCollection() 
-	{
-		db.execSQL("insert into Collection(url) values('"+url+"')");
-	}
 	
-	private void updateCollection() 
-	{
-		db.execSQL("update Collection set url='' where url='"+url+"'");
-	}
 }

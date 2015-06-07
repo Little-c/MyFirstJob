@@ -9,6 +9,8 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -45,7 +47,8 @@ public class FrameActivity extends ActivityGroup {
 	private PagerAdapter pagerAdapter = null;
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		//是软件全屏，并且没有标题
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -74,7 +77,8 @@ public class FrameActivity extends ActivityGroup {
 		IndiText = (TextView)findViewById(R.id.indiTxt);
 		createView();
 		//内部类PagerAdapter
-		pagerAdapter = new PagerAdapter() {
+		pagerAdapter = new PagerAdapter() 
+		{
 			//判断再次添加的View和之前的View是否是同一个View
 			@Override
 			public boolean isViewFromObject(View arg0, Object arg1) {
@@ -175,7 +179,7 @@ public class FrameActivity extends ActivityGroup {
 		view.setTag(0);
 		list.add(view);
 		view1 = FrameActivity.this.getLocalActivityManager()
-					 .startActivity("experience", new Intent(FrameActivity.this, ExperActivity.class))
+					 .startActivity("experience", new Intent(FrameActivity.this, Experience.class))
 					 .getDecorView();
 		view1.setTag(1);
 		list.add(view1);
@@ -249,34 +253,41 @@ public class FrameActivity extends ActivityGroup {
 	/**
 	 * 返回按钮的监听，用来询问用户是否退出程序
 	 * */
+	
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (keyCode == KeyEvent.KEYCODE_BACK) {
-				Builder builder = new Builder(FrameActivity.this);
-				builder.setTitle("提示");
-				builder.setMessage("你确定要退出吗？");
-				builder.setIcon(R.drawable.ic_launcher);
-
-				DialogInterface.OnClickListener dialog = new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface arg0, int arg1) {
-						// TODO Auto-generated method stub
-						if (arg1 == DialogInterface.BUTTON_POSITIVE) {
-							arg0.cancel();
-						} else if (arg1 == DialogInterface.BUTTON_NEGATIVE) {
-							FrameActivity.this.finish();
-						}
-					}
-				};
-				builder.setPositiveButton("取消", dialog);
-				builder.setNegativeButton("确定", dialog);
-				AlertDialog alertDialog = builder.create();
-				alertDialog.show();
-
-			}
+	public boolean dispatchKeyEvent(KeyEvent event)
+	{
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK&&event.getAction() == KeyEvent.ACTION_UP)
+		{
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("提示");
+			PackageInfo pkg = null;
+			try {
+				pkg = getPackageManager().getPackageInfo(getApplication().getPackageName(), 0);
+			} catch (NameNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
+            
+			String appName = pkg.applicationInfo.loadLabel(getPackageManager()).toString();  
+			builder.setMessage("您确定要退出"+appName+"吗？");
+			builder.setPositiveButton("退出",
+			new DialogInterface.OnClickListener() 
+			{
+				@Override
+				public void onClick(DialogInterface dialog, int which) 
+				{
+					// 退出程序
+					Intent exitIntent = new Intent(Intent.ACTION_MAIN);
+					exitIntent.addCategory(Intent.CATEGORY_HOME);
+					startActivity(exitIntent);
+					FrameActivity.this.finish();
+				}
+			});
+			builder.setNegativeButton("取消", null);
+			builder.show();
+			return true;
 		}
-		return false;
+		return super.dispatchKeyEvent(event);
 	}
 }

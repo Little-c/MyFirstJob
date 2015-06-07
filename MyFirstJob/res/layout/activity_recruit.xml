@@ -6,7 +6,7 @@
 	<LinearLayout
         android:id="@+id/infDetailTitle"
         android:layout_width="fill_parent"
-        android:layout_height="35dp"
+        android:layout_height="47dp"
         android:background="#56abe4"
        	android:orientation="horizontal"
        	android:gravity="center"
@@ -46,7 +46,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="3dp"
-                            android:text="四川"
+                            android:text="浙江省"
                             android:textColor="#828282"
                             android:textSize="15sp" />
 
@@ -71,7 +71,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="3dp"
-                            android:text="成都市"
+                            android:text="杭州市"
                             android:textColor="#828282"
                             android:textSize="15sp" />
 
@@ -96,7 +96,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="3dp"
-                            android:text="四川大学"
+                            android:text="浙江工商大学"
                             android:textColor="#828282"
                             android:textSize="15sp" />
 

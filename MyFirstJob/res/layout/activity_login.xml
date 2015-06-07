@@ -52,6 +52,7 @@
             android:textSize="20sp"
             android:background="@null"
             android:layout_marginLeft="5dp"
+            android:inputType="textPassword"
             />
     </LinearLayout>
     

@@ -89,9 +89,9 @@ public class QuestDetail extends Activity {
 				if(display == 0) 
 				{
 					if(isAtd==0)
-						db.execSQL("insert into QuestAttention(qaID,userID,isAttention) values('"+getIntent().getStringExtra("questID")+"','"+PreferenceUtil.getUserID(QuestDetail.this, "userID")+"','true')");
+						db.execSQL("insert into QuestAttention(qaID,userID,isAttention) values('"+getIntent().getStringExtra("questID")+"','"+PreferenceUtil.getUserID(QuestDetail.this, "UserID")+"','true')");
 					else {
-						db.execSQL("update QuestAttention set isAttention='true' where qaID='"+getIntent().getStringExtra("questID")+"' and userID='"+PreferenceUtil.getUserID(QuestDetail.this, "userID")+"'");
+						db.execSQL("update QuestAttention set isAttention='true' where qaID='"+getIntent().getStringExtra("questID")+"' and userID='"+PreferenceUtil.getUserID(QuestDetail.this, "UserID")+"'");
 					}
 					Toast toast = Toast.makeText(QuestDetail.this, "关注成功", Toast.LENGTH_LONG);
 					toast.setGravity(Gravity.CENTER, 0, 0);
@@ -101,7 +101,8 @@ public class QuestDetail extends Activity {
 				} 
 				else 
 				{
-					db.execSQL("update QuestAttention set isAttention='false' where qaID='"+getIntent().getStringExtra("questID")+"' and userID='"+PreferenceUtil.getUserID(QuestDetail.this, "userID")+"'");
+					db.execSQL("update QuestAttention set isAttention='false' where qaID='"+getIntent().getStringExtra("questID")+"' and userID='"+PreferenceUtil.getUserID(QuestDetail.this, "UserID")+"'");
+					sendBroadcast(new Intent("questUpdate"));
 					Toast toast = Toast.makeText(QuestDetail.this, "取消关注成功", Toast.LENGTH_LONG);
 					toast.setGravity(Gravity.CENTER, 0, 0);
 					toast.show();
@@ -153,7 +154,7 @@ public class QuestDetail extends Activity {
 		nameText.setText("——"+cursor.getString(1));
 		questDetailsText.setText(cursor.getString(2));
 		
-		Cursor attentionCursor=db.rawQuery("select isAttention from QuestAttention where qaID='"+getIntent().getStringExtra("questID")+"' and userID='"+PreferenceUtil.getUserID(QuestDetail.this, "userID")+"'", null);
+		Cursor attentionCursor=db.rawQuery("select isAttention from QuestAttention where qaID='"+getIntent().getStringExtra("questID")+"' and userID='"+PreferenceUtil.getUserID(QuestDetail.this, "UserID")+"'", null);
 		isAtd=attentionCursor.getCount();
 		if(attentionCursor.getCount()==0)
 		{

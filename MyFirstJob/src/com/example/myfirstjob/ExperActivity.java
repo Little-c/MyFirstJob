@@ -33,7 +33,8 @@ public class ExperActivity extends Activity {
 		
 		experienceAdapter adapter = new experienceAdapter(this);
 		list.setAdapter(adapter);
-		list.setOnItemClickListener(new OnItemClickListener() {
+		list.setOnItemClickListener(new OnItemClickListener() 
+		{
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
@@ -42,10 +43,13 @@ public class ExperActivity extends Activity {
 				Intent intent = new Intent(ExperActivity.this, ExperDetail.class);
 				HashMap<String, Object> hash = experienceData.get(position);
 				intent.putExtra("url", hash.get("url").toString());
+				
+				intent.putExtra("experienceID", position+"");
 				startActivity(intent);
 			}
 			
 		});
+		
 	}
 
 

@@ -30,7 +30,7 @@
             android:id="@+id/place_text"            
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="四川成都"
+            android:text="浙江杭州"
             android:layout_centerHorizontal="true"    
             android:textSize="16sp"        
             />
@@ -38,7 +38,7 @@
             android:id="@+id/school_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="四川大学"
+            android:text="浙江大学"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:textSize="16sp"

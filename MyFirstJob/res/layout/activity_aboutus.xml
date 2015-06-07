@@ -7,7 +7,7 @@
 	<LinearLayout
         android:id="@+id/infDetailTitle"
         android:layout_width="fill_parent"
-        android:layout_height="35dp"
+        android:layout_height="47dp"
         android:background="#56abe4"
        	android:orientation="horizontal"
        	
@@ -67,8 +67,8 @@
         		android:padding="5dp"
         		android:textSize="18sp"
         		android:text="应用简介：
-        	\n        这是针对大学生求职应聘的一个安卓APP，聚合了招聘实习信息、笔试面试经验、同时也可以提问回答相关问题。
-        	\n        这也是自己动手写的第一个安卓应用，还有很多做的不好的地方，请多多包含"
+        	\n        这是针对大学生求职应聘的一个安卓APP，聚合了高校的招聘实习信息、笔试面试经验、同时也可以提问回答相关问题。
+        	\n        这也是自己动手写的第一个安卓应用，还有很多做的不好的地方，需要慢慢改进，还请多多包含，拜托拜托！"
        		 />
 			<TextView 
        	 		android:layout_width="fill_parent"

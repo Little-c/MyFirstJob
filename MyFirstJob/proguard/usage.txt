@@ -1,0 +1,21 @@
+Util.PreferenceUtil:
+    6:6:public PreferenceUtil()
+Util.StringUtil
+com.example.myfirstjob.BuildConfig
+com.example.myfirstjob.Camera:
+    private java.lang.String uploadBuffer
+com.example.myfirstjob.IndiActivity$imageItemClickListener
+com.example.myfirstjob.R
+com.example.myfirstjob.R$attr
+com.example.myfirstjob.R$color
+com.example.myfirstjob.R$dimen
+com.example.myfirstjob.R$drawable
+com.example.myfirstjob.R$id
+com.example.myfirstjob.R$layout
+com.example.myfirstjob.R$menu
+com.example.myfirstjob.R$string
+com.example.myfirstjob.R$style
+com.example.myfirstjob.Recruit:
+    private int shiWidth
+    private int xiaoWidth
+    269:271:public void dismiss()

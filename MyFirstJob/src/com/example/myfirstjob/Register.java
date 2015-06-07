@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import Util.PreferenceUtil;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -61,15 +62,26 @@ public class Register extends Activity
 							{
 								if(passEdt.getText().toString().equals(confirmEdt.getText().toString()))
 								{
-									db.execSQL("insert into User(account,name,password) "
-											+ "values('"+accountEdt.getText().toString()+"',"
-													+ "'"+nameEdt.getText().toString()+"',"
-															+ "'"+passEdt.getText().toString()+"')");
 									
-									PreferenceUtil.setUserID(Register.this, "UserID", accountEdt.getText().toString());
-									Toast.makeText(Register.this, "注册成功", 500).show();
-									Register.this.startActivity(new Intent(Register.this,FrameActivity.class));
-									finish();
+									Cursor cursor=db.rawQuery("select account from User where account='"+accountEdt.getText().toString()+"'", null);
+									cursor.moveToFirst();
+									if(cursor.getCount()==0)
+									{
+									
+										db.execSQL("insert into User(account,name,password,sex,area,school) "
+												+ "values('"+accountEdt.getText().toString()+"',"
+														+ "'"+nameEdt.getText().toString()+"',"
+																+ "'"+passEdt.getText().toString()+"','无','无','无')");
+										
+										PreferenceUtil.setUserID(Register.this, "UserID", accountEdt.getText().toString());
+										Toast.makeText(Register.this, "注册成功", 500).show();
+										Register.this.startActivity(new Intent(Register.this,FrameActivity.class));
+										finish();
+									}
+									else 
+									{
+										Toast.makeText(Register.this, "账号存在", 500).show();
+									}
 								}
 								else
 								{

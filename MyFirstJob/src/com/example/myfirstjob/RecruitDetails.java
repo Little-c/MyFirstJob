@@ -36,7 +36,7 @@ public class RecruitDetails extends Activity
 		titleTextView=(TextView)findViewById(R.id.title_text);
 		dateTimeTextView=(TextView)findViewById(R.id.date_time_text);
 		schoolTextView=(TextView)findViewById(R.id.school_text);
-		roomTextView=(TextView)findViewById(R.id.school_text);
+		roomTextView=(TextView)findViewById(R.id.room_text);
 		jobTextView=(TextView)findViewById(R.id.job_text);
 		introTextView=(TextView)findViewById(R.id.introduction_text);
 		

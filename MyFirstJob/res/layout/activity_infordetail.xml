@@ -7,7 +7,7 @@
    	 <LinearLayout
         android:id="@+id/infDetailTitle"
         android:layout_width="fill_parent"
-        android:layout_height="35dp"
+        android:layout_height="47dp"
         android:background="#56abe4"
        	android:orientation="horizontal"
          >
@@ -18,12 +18,15 @@
              android:gravity="left"
             
              >
-            <ImageView 
-              android:id="@+id/backToMain"
-              android:layout_width="35dp"
-              android:layout_height="match_parent"
-              android:background="@drawable/back1"
-              /> 
+
+             <ImageView
+                 android:id="@+id/backToMain"
+                 android:layout_width="30dp"
+                 android:layout_height="40dp"
+                 android:layout_marginLeft="15dp"
+                 android:scaleType="fitCenter"
+                 android:src="@drawable/back_white" />
+
          </LinearLayout>
          <LinearLayout 
              android:layout_width="match_parent"
@@ -35,7 +38,7 @@
             android:id="@+id/informationTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="职到"
+            android:text="经验详情"
             android:textColor="#fff"
             android:textSize="20sp" /> 
          </LinearLayout> 

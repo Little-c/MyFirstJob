@@ -7,7 +7,7 @@
 	<LinearLayout
         android:id="@+id/individualTitleLayout"
         android:layout_width="fill_parent"
-        android:layout_height="35dp"
+        android:layout_height="47dp"
         android:background="#56abe4"
         android:gravity="center"
          >

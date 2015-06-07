@@ -29,7 +29,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class QuestActivity extends Activity {
+public class QuestActivity extends Activity 
+{
 	
 	private Button createBtn;
 	private int display = 0;
