@@ -9,5 +9,4 @@ It's an Android app about gathering information of jobs
     类似一个社区，用户可以提问，也可以回答别人的问题<br>
 * 我的模块<br>
     一些个人的设置都在里面<br>
-PS:关于这个APP的特别之处，目前还没有想到很好的点子，之后想到会补充<br>
-特别之处，就是好像还没人做过类似的东西。。
+
